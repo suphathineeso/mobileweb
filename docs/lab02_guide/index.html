@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KKU Campus Guide</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: "Segoe UI", sans-serif;
+            background: #f2f2f5;
+            color: #333;
+            line-height: 1.6;
+        }
+
+
+        header {
+            background: linear-gradient(90deg, #8B0000, #a10000);
+            color: white;
+            padding: 15px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-left {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        header canvas {
+            background: white;
+            border-radius: 50%;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .header-text h1 {
+            margin: 0;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .header-text p {
+            margin: 2px 0 0 0;
+            font-size: 14px;
+        }
+
+        nav a {
+            color: white;
+            font-size: 16px;
+            text-decoration: none;
+            padding: 8px 16px;
+            border-radius: 8px;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+
+        main {
+            max-width: 1000px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        section {
+            background: white;
+            margin-bottom: 30px;
+            padding: 25px;
+            border-right: #a10000 solid;
+            border-bottom: #a10000 solid;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        #text {
+            background: white;
+            margin-bottom: 30px;
+            padding: 25px;
+            border: #a10000 solid;
+            text-align: center;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+
+        }
+
+        section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        section h2 {
+            margin-top: 0;
+            color: #8B0000;
+            font-size: 24px;
+        }
+
+        section p {
+            font-size: 16px;
+            color: #444;
+            margin-top: 10px;
+        }
+
+        .place-images {
+            display: flex;
+            gap: 15px;
+            margin-top: 15px;
+            flex-wrap: wrap;
+        }
+
+        .place-images img {
+            width: calc(50% - 10px);
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+
+        .place-images img:hover {
+            transform: scale(1.05);
+        }
+
+
+        #form {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+            margin-bottom: 50px;
+        }
+
+        #form h2 {
+            margin-top: 0;
+            color: #8B0000;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        #form input,
+        #form textarea {
+            width: 97%;
+            padding: 14px;
+            border-radius: 10px;
+            border: 1px solid #ccc;
+            font-size: 16px;
+            transition: 0.3s;
+            background: #fafafa;
+        }
+
+        #form input:focus,
+        #form textarea:focus {
+            border-color: #8B0000;
+            box-shadow: 0 0 8px rgba(139, 0, 0, 0.3);
+            outline: none;
+        }
+
+        #form button {
+            width: 100%;
+            padding: 14px;
+            font-size: 16px;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            background: linear-gradient(90deg, #8B0000, #a10000);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            transition: 0.3s;
+        }
+
+        #form button:hover {
+            background: linear-gradient(90deg, #a10000, #8B0000);
+            transform: translateY(-2px);
+        }
+
+        footer {
+            background: linear-gradient(90deg, #333, #555);
+            color: white;
+            text-align: center;
+            padding: 25px;
+            margin-top: 50px;
+            font-size: 14px;
+        }
+
+        @media (max-width: 750px) {
+            header {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            nav {
+                margin-top: 10px;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .place-images img {
+                width: 100%;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+    <header>
+
+        <div class="header-left">
+            <canvas id="logoCanvas" width="100" height="100"></canvas>
+
+            <div class="header-text">
+                <h1>KKU Campus Guide</h1>
+                <p>ที่นี่… มหาวิทยาลัยขอนแก่น</p>
+            </div>
+        </div>
+
+        <nav>
+            <a href="#places">สถานที่</a>
+            <a href="#form">แบบฟอร์ม</a>
+        </nav>
+
+    </header>
+
+    <main>
+
+        <section id="text">
+            <h1>KKU Campus Guide</h1>
+            <h2>สำรวจมหาวิทยาลัยขอนแก่นไปกับเรา!</h2>
+            <p>
+                มหาวิทยาลัยขอนแก่นไม่ได้มีแค่ห้องเรียน แต่เต็มไปด้วยสถานที่สวยงามและน่าสนใจ <br>
+                ไม่ว่าจะเป็นบึงสีฐานที่ร่มรื่น พิพิธภัณฑ์ธรรมชาติวิทยาที่เต็มไปด้วยความรู้ สวนเกษตรที่สดชื่น
+                หรือศาลเจ้าพ่อมอที่ศักดิ์สิทธิ์ <br> เชิญชมและค้นหาสถานที่โปรดของคุณ พร้อมแบ่งปันประสบการณ์กับเพื่อน ๆ
+                ได้ที่ KKU Campus Guide
+            </p>
+        </section>
+
+        <section id="places">
+            <h2>1. ศาลเจ้าพ่อมอดินแดง – Chao Pho Mo Din Daeng Shrine</h2>
+            <p>ศาลเจ้าพ่อมอดินแดงเป็นสถานที่ศักดิ์สิทธิ์คู่กับมหาวิทยาลัยขอนแก่นและเป็นที่เคารพบูชาของนักศึกษา บุคลากร
+                และประชาชนทั่วไปก่อนจะเริ่มเรียนหรือเริ่มงานใหม่
+                เชื่อกันว่าเจ้าพ่อมอดินแดงเป็นสิ่งศักดิ์สิทธิ์ที่คอยคุ้มครองดูแลและนำความเจริญรุ่งเรืองแก่ผู้ที่มากราบไหว้
+                สถานที่แห่งนี้มีบรรยากาศสงบ ร่มรื่น รายล้อมด้วยต้นไม้ใหญ่ ทำให้ผู้คนสามารถมาไหว้พระขอพรได้อย่างสบายใจ
+                นักศึกษาใหม่มักจะมาที่นี่ในวันแรกที่เข้าสู่มหาวิทยาลัยเพื่อเป็นสิริมงคล
+                และเป็นอีกหนึ่งแลนด์มาร์กที่ทุกคนต้องมาถ่ายรูปเป็นที่ระลึกเมื่อเข้าศึกษาที่ มข.</p>
+            <div class="place-images">
+                <img src="img/เจ้าพ่อมอ.jpg">
+                <img src="img/เจ้าพ่อมอ1.jpg">
+            </div>
+        </section>
+
+        <section>
+            <h2>2. บึงศรีฐาน – Si Than Lake</h2>
+            <p>บึงศรีฐานเป็นหนึ่งในสถานที่พักผ่อนยอดนิยมที่สุดของมหาวิทยาลัยขอนแก่น
+                รายล้อมด้วยธรรมชาติที่ร่มรื่นและบรรยากาศอันสงบ
+                ทำให้เป็นพื้นที่ที่นักศึกษาและบุคลากรมาใช้ออกกำลังกายและพักผ่อนอย่างต่อเนื่อง ไม่ว่าจะเป็นการเดิน วิ่ง
+                ปั่นจักรยาน หรือจะมานั่งรับลมชมวิวในช่วงเย็นก็เหมาะอย่างยิ่ง
+                โดยเฉพาะช่วงพระอาทิตย์ตก บึงศรีฐานจะมีสีทองสวยงามสะท้อนผิวน้ำ กลายเป็นจุดถ่ายรูปยอดนิยม
+                นอกจากนี้บริเวณรอบบึงยังมีร้านอาหารและคาเฟ่หลายแห่ง ทำให้เป็นพื้นที่ที่ครบทั้งการพักผ่อน การทำกิจกรรม
+                และการพบปะกับเพื่อน ๆ ภายในรั้วมหาวิทยาลัย</p>
+            <div class="place-images">
+                <img src="img/บึงศรีฐาน.webp">
+                <img src="img/บึงศรีฐาน1.webp">
+            </div>
+        </section>
+
+        <section>
+            <h2>3. พิพิธภัณฑ์ธรรมชาติวิทยา มข. – KKU Natural History Museum</h2>
+            <p>พิพิธภัณฑ์ธรรมชาติวิทยา มข. เป็นศูนย์การเรียนรู้เกี่ยวกับธรรมชาติ วิทยาศาสตร์ ชีววิทยา
+                และสิ่งแวดล้อมที่ใหญ่ที่สุดแห่งหนึ่งในภาคตะวันออกเฉียงเหนือ ภายในจัดแสดงตัวอย่างสัตว์ สัตว์ดอง
+                ซากดึกดำบรรพ์ (ฟอสซิล) ตัวอย่างแมลง สมุนไพรท้องถิ่น และความหลากหลายทางชีวภาพของภูมิภาคอีสาน
+                พิพิธภัณฑ์แห่งนี้มีบทบาทสำคัญในการอนุรักษ์พันธุ์สัตว์และพืช รวมถึงเป็นแหล่งศึกษาวิจัยของนักวิทยาศาสตร์
+                นักศึกษา และผู้สนใจทั่วไป บรรยากาศภายในอาคารมีการออกแบบให้ผู้เข้าชมเดินชมได้อย่างเป็นระบบ
+                โดยมีป้ายคำอธิบายชัดเจน ทำให้เข้าใจง่ายและเพลิดเพลิน
+                เหมาะกับการมาเรียนรู้ทั้งแบบเดี่ยวและแบบเข้าชมเป็นหมู่คณะ</p>
+            <div class="place-images">
+                <img src="img/พิพิธพัณ.jpg">
+                <img src="img/พิพิธพัณ1.jpg">
+            </div>
+        </section>
+
+        <section>
+            <h2>4. สวนเกษตร มข. – Agricultural Garden</h2>
+            <p>สวนเกษตรของมหาวิทยาลัยขอนแก่นเป็นพื้นที่สีเขียวขนาดใหญ่ที่จัดสรรเพื่อการเรียนรู้ ทดลอง
+                และทำวิจัยด้านการเกษตร ครอบคลุมทั้งเรื่องพืชไร่ พืชสวน พืชสมุนไพร รวมถึงไม้ผลหลากหลายชนิด
+                เป็นสถานที่ที่นักศึกษาคณะเกษตรศาสตร์และสาขาที่เกี่ยวข้องใช้ฝึกปฏิบัติจริงในภาคสนาม
+                นอกจากบทบาทด้านการศึกษาแล้ว สวนเกษตรยังเป็นสถานที่พักผ่อนที่เงียบสงบ บรรยากาศดี
+                รายล้อมด้วยต้นไม้และแปลงเกษตรสวยงาม เหมาะสำหรับการมาถ่ายรูป สูดอากาศบริสุทธิ์ หรือทำกิจกรรมกลางแจ้ง
+                นักศึกษาหลายคนมองว่านี่คือ “โอเอซิส” ของมอขอ เพราะให้ความรู้สึกผ่อนคลายและเป็นธรรมชาติอย่างแท้จริง</p>
+            <div class="place-images">
+                <img src="img/สวนเกษตร.jpg">
+                <img src="img/สวนเกษตร1.jpg">
+            </div>
+        </section>
+
+        <section id="form">
+            <h2>แบบฟอร์มแนะนำสถานที่</h2>
+
+            <form action="https://api.web3forms.com/submit" method="POST">
+                <input type="hidden" name="access_key" value="964f2d23-4f32-4b42-b3fd-d7c2d325ad4f">
+                <input type="hidden" name="subject" value="New Place Submission from KKU Website">
+
+                ชื่อสถานที่ :
+                <div class="form-group">
+                    <input type="text" name="place_name" placeholder="ชื่อสถานที่" required>
+                </div>
+
+                รายละเอียดของสถานที่ :
+                <div class="form-group">
+                    <textarea name="place_detail" rows="4" placeholder="รายละเอียดของสถานที่" required></textarea>
+                </div>
+
+                ลิงค์ภาพ (url) :
+                <div class="form-group">
+                    <input type="url" name="place_image" placeholder="วาง URL ที่นี่..." required>
+                </div>
+
+                <button type="submit">ส่งข้อมูล</button>
+            </form>
+
+
+
+
+        </section>
+
+
+    </main>
+
+    <footer>
+        © 2025 Khon Kaen University — รหัสนักศึกษา : 673380245-4 | ชื่อ-สกุล : นางสาวศุภาฐิณี ซอสูงเนิน
+    </footer>
+
+    <script>
+        const canvas = document.getElementById("logoCanvas");
+        const ctx = canvas.getContext("2d");
+
+        let angle = 0;
+
+        const logo = new Image();
+        logo.src = "img/logo.png";
+
+        function drawLogo() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+
+            ctx.save();
+            ctx.beginPath();
+            ctx.arc(50, 50, 35, 0, Math.PI * 2);
+            ctx.clip();
+            ctx.drawImage(logo, 15, 15, 70, 70);
+            ctx.restore();
+
+
+            ctx.save();
+            ctx.translate(50, 50);
+            ctx.rotate(angle);
+
+            ctx.setLineDash([10, 5]);
+            ctx.lineWidth = 3;
+            ctx.strokeStyle = "#8B0000";
+            ctx.beginPath();
+            ctx.arc(0, 0, 45, 0, Math.PI * 2);
+            ctx.stroke();
+
+            ctx.restore();
+
+            angle += 0.01;
+            requestAnimationFrame(drawLogo);
+        }
+
+        logo.onload = () => drawLogo();
+    </script>
+
+</body>
+
+</html>
