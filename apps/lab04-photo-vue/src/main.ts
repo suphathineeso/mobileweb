@@ -29,7 +29,6 @@ import '@ionic/vue/css/palettes/dark.system.css'
 /* Theme variables */
 import './theme/variables.css'
 
-// ⭐ เพิ่มบรรทัดนี้ (ต้องอยู่ก่อน createApp)
 defineCustomElements(window)
 
 const app = createApp(App)

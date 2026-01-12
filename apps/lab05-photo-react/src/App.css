@@ -1,0 +1,26 @@
+
+.custom-tab-bar {
+  height: 60px;
+  padding-bottom: env(safe-area-inset-bottom);
+}
+
+.camera-tab {
+  position: relative;
+  top: -18px;
+}
+
+.camera-button {
+  width: 56px;
+  height: 56px;
+  background: #3880ff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+}
+
+.camera-button ion-icon {
+  color: white;
+  font-size: 26px;
+}
