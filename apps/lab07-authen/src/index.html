@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Firebase Auth Simple</title>
+  </head>
+  <body>
+    <h2>Google Login</h2>
+    <button onclick="loginGoogle()">Login with Google</button>
+
+    <hr />
+
+    <h2>Phone OTP</h2>
+    <div id="recaptcha"></div>
+
+    <input id="phone" placeholder="+669xxxxxxxx" />
+    <button onclick="send()">ส่ง OTP</button>
+
+    <br /><br />
+
+    <input id="otp" placeholder="OTP" />
+    <button onclick="verify()">ยืนยัน OTP</button>
+
+    <script type="module">
+      import {
+        loginWithGoogle,
+        setupRecaptcha,
+        sendOtp,
+        verifyOtp,
+      } from "./main.ts";
+
+      window.loginGoogle = loginWithGoogle;
+
+      window.send = () => {
+        const phone = document.getElementById("phone").value;
+        sendOtp(phone);
+      };
+
+      window.verify = () => {
+        const otp = document.getElementById("otp").value;
+        verifyOtp(otp);
+      };
+
+      setupRecaptcha();
+    </script>
+  </body>
+</html>

@@ -1,0 +1,9 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">lab07-authen</string>
+    <string name="title_activity_main">lab07-authen</string>
+    <string name="package_name">cpkku.suphathinee.lab07</string>
+    <string name="custom_url_scheme">cpkku.suphathinee.lab07</string>
+    
+    <string name="google_client_id">723658010291-aeqbs1fito2ov1ne569q9n591u7mp4td.apps.googleusercontent.com</string>
+</resources>

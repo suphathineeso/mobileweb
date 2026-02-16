@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "723658010291",
+    "project_id": "lab07-authen-ee5fc",
+    "storage_bucket": "lab07-authen-ee5fc.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:723658010291:android:95ddb579ac090883e74ac6",
+        "android_client_info": {
+          "package_name": "cpkku.suphathinee.lab07"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "723658010291-6hn66occsuu795rcp48ar07qhnt8p8md.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "cpkku.suphathinee.lab07",
+            "certificate_hash": "d44ee274e97075ef6bc939f8d5a3b8aa411929d1"
+          }
+        },
+        {
+          "client_id": "723658010291-aeqbs1fito2ov1ne569q9n591u7mp4td.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCKHJkQv6LisO8GaCEpKbaMm7ITitcJUuk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "723658010291-aeqbs1fito2ov1ne569q9n591u7mp4td.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
