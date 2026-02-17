@@ -1,240 +1,209 @@
 <!DOCTYPE html>
 <html lang="th">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>ผลงาน นางสาวศุภาฐิณี ซอสูงเนิน</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Portfolio ขาวดำ</title>
 
-    <link
-        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-        rel="stylesheet"
-    />
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
 
-    <style>
-        body {
-            background: linear-gradient(135deg, #667eea, #764ba2);
-            font-family: 'Segoe UI', sans-serif;
-            color: #333;
-        }
+<style>
 
-        header {
-            background: rgba(255, 255, 255, 0.15);
-            backdrop-filter: blur(12px);
-            border-radius: 20px;
-            margin: 30px;
-            padding: 30px;
-            color: white;
-            animation: fadeIn 1s ease-in-out;
-        }
+/* ===== Black & White Clean Hand-Drawn Style ===== */
 
-        h4 {
-            font-weight: 600;
-            color: white !important;
-        }
+body{
+    background:#ffffff;
+    font-family:'Segoe UI', sans-serif;
+    color:#000;
+}
 
-        .card {
-            border: none;
-            border-radius: 20px;
-            transition: all 0.3s ease;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-            background: white;
-        }
+/* HEADER */
+header{
+    background:#fff;
+    border:3px dashed #000;
+    border-radius:20px;
+    padding:30px;
+    margin:40px;
+    text-align:center;
+    box-shadow:8px 8px 0 #000;
+}
 
-        .card:hover {
-            transform: translateY(-10px) scale(1.02);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.25);
-        }
+/* SECTION TITLE */
+h4{
+    font-weight:600;
+    border-bottom:3px solid #000;
+    display:inline-block;
+    padding-bottom:6px;
+    margin-bottom:30px;
+}
 
-        .card h5 {
-            font-weight: 600;
-        }
+/* CARD */
+.card{
+    background:#fff;
+    border:3px dashed #000;
+    border-radius:18px;
+    box-shadow:6px 6px 0 #000;
+    transition:0.2s ease;
+}
 
-        .btn-primary {
-            background: linear-gradient(45deg, #6a11cb, #2575fc);
-            border: none;
-            border-radius: 25px;
-            padding: 6px 18px;
-            transition: 0.3s;
-        }
+.card:hover{
+    box-shadow:10px 10px 0 #000;
+}
 
-        .btn-primary:hover {
-            background: linear-gradient(45deg, #2575fc, #6a11cb);
-            box-shadow: 0 0 15px rgba(255,255,255,0.6);
-        }
+.card h5{
+    font-weight:600;
+    margin-bottom:15px;
+}
 
-        footer {
-            color: white;
-        }
+/* BUTTON */
+.btn-primary{
+    background:#000;
+    border:2px solid #000;
+    border-radius:18px;
+    color:#fff;
+    font-weight:500;
+    padding:6px 16px;
+}
 
-        @keyframes fadeIn {
-            from {opacity: 0; transform: translateY(-20px);}
-            to {opacity: 1; transform: translateY(0);}
-        }
-    </style>
+.btn-primary:hover{
+    background:#fff;
+    color:#000;
+}
+
+/* FOOTER */
+footer{
+    text-align:center;
+    margin-top:50px;
+    font-weight:500;
+}
+
+</style>
 </head>
 
 <body>
 
-    <header class="text-center py-4">
-        <h3>รายวิชา Mobile Web Application Development</h3>
-        <p>ภาคการศึกษา 2/2568</p>
-        <p>
-            <strong>ชื่อ-สกุลนักศึกษา: นางสาวศุภาฐิณี ซอสูงเนิน</strong>
-        </p>
-        <p>
-            <strong>รหัสนักศึกษา: 673380245-4</strong>
-        </p>
-    </header>
+<header>
+<h3>รายวิชา Mobile Web Application Development</h3>
+<p>ภาคการศึกษา 2/2568</p>
+<p><strong>ชื่อ-สกุลนักศึกษา: นางสาวศุภาฐิณี ซอสูงเนิน</strong></p>
+<p><strong>รหัสนักศึกษา: 673380245-4</strong></p>
+</header>
 
-    <main class="container mt-4">
-        <h4 class="mb-4 text-primary">สรุปผลงานการฝึกปฏิบัติรายสัปดาห์</h4>
-        <div class="row g-4">
+<main class="container">
+<h4 class="text-center">สรุปผลงานการฝึกปฏิบัติรายสัปดาห์</h4>
 
-            <!-- Week 1 -->
-            <div class="col-md-6 col-lg-4">
-                <div class="card h-100">
-                    <div class="card-body">
-                        <h5 class="text-primary">Week 1: การเตรียม Workspace</h5>
-                        <p>
-                            ติดตั้งเครื่องมือที่จำเป็นสำหรับฝึกปฏิบัติการในรายวิชา
-                            ทดลองสร้าง Ionic-Vue และ Ionic-Project
-                        </p>
-                        <a href="lab01_vue/index.html" class="btn btn-primary mb-2" target="_blank">Lab01_Vue</a>
-                        <a href="lab01_react/index.html" class="btn btn-primary mb-2" target="_blank">Lab01_React</a>
-                        <br />
-                        วันทีสร้างผลงาน: 25/11/2568
-                    </div>
-                </div>
-            </div>
+<div class="row g-4">
 
-            <!-- Week 2 -->
-            <div class="col-md-6 col-lg-4">
-                <div class="card h-100">
-                    <div class="card-body">
-                        <h5 class="text-primary">Week 2: HTML5 & CSS3</h5>
-                        <p>การสร้างโครงร่างและออกแบบหน้าเว็บด้วย HTML5 และ CSS3</p>
-                        <a href="lab02_guide/index.html" class="btn btn-primary mb-2" target="_blank">ดูผลงาน</a>
-                        <br>
-                        วันทีสร้างผลงาน: 2/12/2568
-                    </div>
-                </div>
-            </div>
+<!-- Week 1 -->
+<div class="col-md-6 col-lg-4">
+<div class="card h-100">
+<div class="card-body">
+<h5>Week 1: การเตรียม Workspace</h5>
+<p>
+ติดตั้งเครื่องมือที่จำเป็นสำหรับฝึกปฏิบัติการในรายวิชา
+ทดลองสร้าง Ionic-Vue และ Ionic-Project
+</p>
+<a href="lab01_vue/index.html" class="btn btn-primary mb-2" target="_blank">Lab01_Vue</a>
+<a href="lab01_react/index.html" class="btn btn-primary mb-2" target="_blank">Lab01_React</a>
+<br/>วันที่สร้างผลงาน: 25/11/2568
+</div></div></div>
 
-            <!-- Week 3 -->
-            <div class="col-md-6 col-lg-4">
-                <div class="card h-100">
-                    <div class="card-body">
-                        <h5 class="text-primary">Week 3: JavaScript & TypeScript</h5>
-                        <p>
-                            การเขียน JavaScript และ TypeScript
-                            ระบบจัดการข้อมูลนักศึกษา (Student Management System)
-                        </p>
-                        <a href="lab03_typescript" class="btn btn-primary mb-2" target="_blank">ดูผลงาน</a>
-                        <br>
-                        วันทีสร้างผลงาน: 10/12/2568
-                    </div>
-                </div>
-            </div>
+<!-- Week 2 -->
+<div class="col-md-6 col-lg-4">
+<div class="card h-100"><div class="card-body">
+<h5>Week 2: HTML5 & CSS3</h5>
+<p>
+การสร้างโครงร่างและออกแบบหน้าเว็บด้วย HTML5 และ CSS3
+</p>
+<a href="lab02_guide/index.html" class="btn btn-primary mb-2" target="_blank">ดูผลงาน</a>
+<br/>วันที่สร้างผลงาน: 2/12/2568
+</div></div></div>
 
-            <!-- Week 4 -->
-            <div class="col-md-6 col-lg-4">
-                <div class="card h-100">
-                    <div class="card-body">
-                        <h5 class="text-primary">Week 4: Photo Gallary ด้วย Ionic Vue</h5>
-                        <p>
-                            การสร้างแอป “Photo Gallary” ด้วย Ionic Vue
-                            พัฒนาแอป “Photo Gallery” ด้วย Ionic Vue ถ่ายภาพจากกล้อง, แสดงภาพเป็นกริด,
-                            และ บันทึกภาพไว้ถาวรบนอุปกรณ์ ผ่าน Capacitor Plugins
-                        </p>
-                        <a href="lab04_photo-vue" class="btn btn-primary mb-2" target="_blank">ดูผลงาน</a>
-                        <br>
-                        วันทีสร้างผลงาน: 05/01/2569
-                    </div>
-                </div>
-            </div>
+<!-- Week 3 -->
+<div class="col-md-6 col-lg-4">
+<div class="card h-100"><div class="card-body">
+<h5>Week 3: JavaScript & TypeScript</h5>
+<p>
+การเขียน JavaScript และ TypeScript
+ระบบจัดการข้อมูลนักศึกษา (Student Management System)
+</p>
+<a href="lab03_typescript" class="btn btn-primary mb-2" target="_blank">ดูผลงาน</a>
+<br/>วันที่สร้างผลงาน: 10/12/2568
+</div></div></div>
 
-            <!-- Week 5 -->
-            <div class="col-md-6 col-lg-4">
-                <div class="card h-100">
-                    <div class="card-body">
-                        <h5 class="text-primary">Week 5: Photo Gallary ด้วย Ionic React</h5>
-                        <p>
-                            การสร้างแอป “Photo Gallary” ด้วย Ionic React
-                            พัฒนาแอป “Photo Gallery” ด้วย Ionic React ถ่ายภาพจากกล้อง, แสดงภาพเป็นกริด,
-                            และ บันทึกภาพไว้ถาวรบนอุปกรณ์ ผ่าน Capacitor Plugins
-                        </p>
-                        <a href="lab05-photo-react" class="btn btn-primary mb-2" target="_blank">ดูผลงาน</a>
-                        <br>
-                        วันทีสร้างผลงาน: 12/01/2569
-                    </div>
-                </div>
-            </div>
+<!-- Week 4 -->
+<div class="col-md-6 col-lg-4">
+<div class="card h-100"><div class="card-body">
+<h5>Week 4: Photo Gallary ด้วย Ionic Vue</h5>
+<p>
+พัฒนาแอป Photo Gallery ด้วย Ionic Vue
+ถ่ายภาพจากกล้อง แสดงภาพเป็นกริด
+และบันทึกภาพไว้ถาวรบนอุปกรณ์ผ่าน Capacitor Plugins
+</p>
+<a href="lab04_photo-vue" class="btn btn-primary mb-2" target="_blank">ดูผลงาน</a>
+<br/>วันที่สร้างผลงาน: 05/01/2569
+</div></div></div>
 
-            <!-- Week 6 -->
-            <div class="col-md-6 col-lg-4">
-                <div class="card h-100">
-                    <div class="card-body">
-                        <h5 class="text-primary">Week 6: การพัฒนาแอปด้วย Ionic ร่วมกับ Firebase Firestore</h5>
-                        <p>
-                            การพัฒนาแอปด้วย Ionic ร่วมกับ Firebase Firestore
-                            สร้าง Ionic Application และเชื่อมต่อ Firebase ได้
-                            ใช้งาน Firestore Database สำหรับจัดเก็บข้อมูล
-                            พัฒนาแอปที่รองรับการเพิ่ม แสดง แก้ไข และลบข้อมูล (CRUD)
-                            เข้าใจการทำงานของ Realtime Database
-                        </p>
-                        <a href="lab06-expense" class="btn btn-primary mb-2" target="_blank">ดูผลงาน</a>
-                        <br>
-                        วันทีสร้างผลงาน: 02/02/2569
-                    </div>
-                </div>
-            </div>
+<!-- Week 5 -->
+<div class="col-md-6 col-lg-4">
+<div class="card h-100"><div class="card-body">
+<h5>Week 5: Photo Gallary ด้วย Ionic React</h5>
+<p>
+พัฒนาแอป Photo Gallery ด้วย Ionic React
+ถ่ายภาพ แสดงผล และบันทึกภาพบนอุปกรณ์
+ผ่าน Capacitor Plugins
+</p>
+<a href="lab05-photo-react" class="btn btn-primary mb-2" target="_blank">ดูผลงาน</a>
+<br/>วันที่สร้างผลงาน: 12/01/2569
+</div></div></div>
 
-            <!-- Week 7 -->
-            <div class="col-md-6 col-lg-4">
-                <div class="card h-100">
-                    <div class="card-body">
-                        <h5 class="text-primary">Week 7: การพัฒนาแอปด้วย Ionic ร่วมกับ Firebase Authentication</h5>
-                        <p>
-                            สร้างโปรเจกต์ Ionic (React/Vue) ด้วย TypeScript และ pnpm
-                            ตั้งค่า Firebase Authentication และ Provider ต่าง ๆ
-                            ออกแบบโครงสร้างโค้ดแบบ maintainable
-                            ทำหน้า Login ที่เรียกใช้ service เดียวกัน
-                            Build และรันบน Android ด้วย Capacitor + config ที่จำเป็น
-                        </p>
-                        <a href="lab07-authen" class="btn btn-primary mb-2" target="_blank">ดูผลงาน</a>
-                        <br>
-                        วันทีสร้างผลงาน: 09/02/2569
-                    </div>
-                </div>
-            </div>
+<!-- Week 6 -->
+<div class="col-md-6 col-lg-4">
+<div class="card h-100"><div class="card-body">
+<h5>Week 6: Ionic + Firebase Firestore</h5>
+<p>
+สร้าง Ionic Application และเชื่อมต่อ Firebase
+ใช้งาน Firestore Database
+พัฒนาแอปที่รองรับการเพิ่ม แสดง แก้ไข และลบข้อมูล (CRUD)
+และเข้าใจการทำงานของ Realtime Database
+</p>
+<a href="lab06-expense" class="btn btn-primary mb-2" target="_blank">ดูผลงาน</a>
+<br/>วันที่สร้างผลงาน: 02/02/2569
+</div></div></div>
 
-            <!-- Week 8 -->
-            <div class="col-md-6 col-lg-4">
-                <div class="card h-100">
-                    <div class="card-body">
-                        <h5 class="text-primary">Week 8: การพัฒนาแอปด้วย Ionic ร่วมกับ Firebase Authentication</h5>
-                        <p>
-                            สร้างโปรเจกต์ Ionic (React/Vue) ด้วย TypeScript และ pnpm
-                            ตั้งค่า Firebase Authentication และ Provider ต่าง ๆ
-                            ออกแบบโครงสร้างโค้ดแบบ maintainable
-                            ทำหน้า Login ที่เรียกใช้ service เดียวกัน
-                            Build และรันบน Android ด้วย Capacitor + config ที่จำเป็น
-                        </p>
-                        <a href="lab07-authen" class="btn btn-primary mb-2" target="_blank">ดูผลงาน</a>
-                        <br>
-                        วันทีสร้างผลงาน: 17/02/2569
-                    </div>
-                </div>
-            </div>
+<!-- Week 7 -->
+<div class="col-md-6 col-lg-4">
+<div class="card h-100"><div class="card-body">
+<h5>Week 7: Ionic + Firebase Authentication</h5>
+<p>
+สร้างโปรเจกต์ Ionic ด้วย TypeScript และ pnpm
+ตั้งค่า Firebase Authentication และ Provider ต่าง ๆ
+ออกแบบโครงสร้างโค้ดแบบ maintainable
+ทำหน้า Login และ Build บน Android ด้วย Capacitor
+</p>
+<a href="lab07-authen" class="btn btn-primary mb-2" target="_blank">ดูผลงาน</a>
+<br/>วันที่สร้างผลงาน: 09/02/2569
+</div></div></div>
 
-        </div>
-    </main>
+<!-- Week 8 -->
+<div class="col-md-6 col-lg-4">
+<div class="card h-100"><div class="card-body">
+<h5>Week 8: Ionic + Firebase AI (Gemini)</h5>
+<p>
+ใช้ Firebase AI Logic เชื่อมต่อโมเดล Gemini 2.5 Flash
+วิเคราะห์ภาพ ออกแบบ JSON Schema
+และพัฒนา Mobile Web App ที่ทำงานได้ทั้งบน Web และ Android
+</p>
+<a href="lab08-ai/#/tabs/tab1" class="btn btn-primary mb-2" target="_blank">ดูผลงาน</a>
+<br/>วันที่สร้างผลงาน: 17/02/2569
+</div></div></div>
 
-    <footer class="text-center mt-5 mb-3">
-        <p>© 2025 Mobile Web Application Development — College of Computing, Khon Kaen University</p>
-    </footer>
+</div>
+</main>
 
-
+<footer>
+2025 Mobile Web Application Development — College of Computing, Khon Kaen University
+</footer>
 
 </body>
 </html>
