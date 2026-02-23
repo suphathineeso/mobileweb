@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lab09 - Ionic + Mobile Phone Sensors</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Segoe UI", Tahoma, sans-serif;
+      background: #f5f7fb;
+      color: #222;
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    .header {
+      background: linear-gradient(135deg, #4f46e5, #06b6d4);
+      color: white;
+      padding: 24px;
+      border-radius: 16px;
+      margin-bottom: 20px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+    }
+
+    .header h1 {
+      margin: 0 0 10px 0;
+      font-size: 28px;
+    }
+
+    .header p {
+      margin: 4px 0;
+      opacity: 0.95;
+    }
+
+    .card {
+      background: white;
+      border-radius: 14px;
+      padding: 18px;
+      margin-bottom: 16px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+      border: 1px solid #e9edf5;
+    }
+
+    .card h2 {
+      margin-top: 0;
+      font-size: 20px;
+      color: #1f2937;
+      border-left: 5px solid #4f46e5;
+      padding-left: 10px;
+    }
+
+    .card h3 {
+      margin-bottom: 8px;
+      color: #374151;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 14px;
+    }
+
+    .shot {
+      border: 1px solid #dbe2ee;
+      border-radius: 12px;
+      padding: 12px;
+      background: #fafcff;
+    }
+
+    .shot img {
+      width: 100%;
+      border-radius: 10px;
+      border: 1px solid #d7ddea;
+      background: #fff;
+    }
+
+    .placeholder {
+      width: 100%;
+      aspect-ratio: 9 / 16;
+      border: 2px dashed #c7d2fe;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #6366f1;
+      background: #eef2ff;
+      font-weight: 600;
+      text-align: center;
+      padding: 10px;
+    }
+
+    .info-list {
+      margin: 0;
+      padding-left: 18px;
+    }
+
+    .tag {
+      display: inline-block;
+      background: #eef2ff;
+      color: #3730a3;
+      padding: 4px 10px;
+      border-radius: 999px;
+      font-size: 13px;
+      margin-right: 6px;
+      margin-bottom: 6px;
+    }
+
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+
+    .note {
+      font-size: 14px;
+      color: #6b7280;
+      margin-top: 8px;
+    }
+
+    a {
+      color: #2563eb;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .footer {
+      text-align: center;
+      color: #6b7280;
+      font-size: 13px;
+      margin-top: 12px;
+      padding: 10px;
+    }
+
+    @media (max-width: 700px) {
+      .two-col {
+        grid-template-columns: 1fr;
+      }
+      .header h1 {
+        font-size: 22px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+
+    <!-- ส่วนหัว -->
+    <section class="header">
+      <h1>Lab09: Ionic + Mobile Phone Sensors (Arm Workout App)</h1>
+      <p><strong>รหัสนักศึกษา:</strong> 673380245-4</p>
+      <p><strong>ชื่อ-สกุล:</strong> นางสาวศุภาฐิณี ซอสูงเนิน</p>
+      <p><strong>ชื่อแอป:</strong> lab09-sensors</p>
+    </section>
+
+    <!-- ลิงก์งาน -->
+    <section class="card">
+      <h2>ลิงก์งาน</h2>
+      <p><strong>GitHub Project:</strong> <a href="https://github.com/suphathineeso/mobileweb" target="_blank">https://github.com/suphathineeso/mobileweb</a></p>
+      <p><strong>GitHub Page:</strong> <a href="https://suphathineeso.github.io/mobileweb/" target="_blank">https://suphathineeso.github.io/mobileweb/</a></p>
+      
+    </section>
+
+    <!-- สรุปแอป -->
+    <section class="card">
+      <h2>สรุปการทำงานของแอป</h2>
+      <div>
+        <span class="tag">Ionic + Vue</span>
+        <span class="tag">Capacitor</span>
+        <span class="tag">TypeScript</span>
+        <span class="tag">Motion Sensor</span>
+        <span class="tag">TTS</span>
+        <span class="tag">Haptics</span>
+      </div>
+      <p>
+        แอปนี้เป็นแอปกายบริหารแขนโดยใช้เซนเซอร์ Accelerometer จากมือถือเพื่อตรวจจับการยกแขนขึ้น-ลง
+        และนับจำนวนรอบแบบ rule-based (ไม่ใช้ machine learning) พร้อมแจ้งผลด้วยเสียง (TTS) และการสั่น (Haptics)
+      </p>
+      <ul class="info-list">
+        <li>กด Start มีเสียงพูดแนะนำการใช้งาน</li>
+        <li>นับรอบเมื่อยกแขนขึ้นสุดและลดลงกลับแนบลำตัว</li>
+        <li>ตรวจความถูกต้องของท่าทางจาก ROM, Tempo และแนวการเคลื่อนที่</li>
+        <li>แสดงสถิติ: รอบทั้งหมด รอบถูก รอบผิด คะแนน Tempo เฉลี่ย และ Percent ถูก</li>
+      </ul>
+    </section>
+
+    <!-- ภาพหน้าจอ -->
+    <section class="card">
+      <h2>ภาพตัวอย่างหน้าจอ App (Android)</h2>
+
+      <div class="grid">
+        <div class="shot">
+          <h3>1) หน้าเริ่ม</h3>
+          <img src="img-vidio/page1.png" alt="หน้าเริ่ม"> 
+          
+        </div>
+
+        <div class="shot">
+          <h3>2) ขณะกำลังนับ</h3>
+          <img src="img-vidio/page2.png" alt="ขณะกำลังนับ"> 
+          
+        </div>
+
+        <div class="shot">
+          <h3>3) หน้าแสดงสถิติเมื่อจบ</h3>
+          <img src="img-vidio/page3.png" alt="หน้าสถิติ">
+         
+        </div>
+      </div>
+    </section>
+
+   
+    <section class="card">
+      <h2>วิดีโอสาธิตการใช้งาน </h2>
+       <div class="video-wrap">
+    <video controls width="25%" preload="metadata">
+      <source src="img-vidio/vidio.mp4" type="video/mp4">
+      เบราว์เซอร์ของคุณไม่รองรับการเล่นวิดีโอ
+    </video>
+  </div>
+      <ul class="info-list">
+        <li>แสดงการกด Start</li>
+        <li>มีเสียงแนะนำ </li>
+        <li>ยกแขนขึ้น-ลง และแอปนับรอบได้</li>
+        <li>แสดงผลสถิติเมื่อจบ</li>
+      </ul>
+      
+    </section>
+
+    <section class="card">
+      <h2>นักศึกษาใช้ AI ช่วยส่วนไหนบ้าง </h2>
+      <p>
+        ใช้ AI ช่วยวางโครงสร้างโค้ด แนะนำการทำ UI และอธิบาย logic การนับรอบจากเซนเซอร์
+        รวมถึงช่วยดู error ของ TypeScript/Ionic บางจุดค่ะ
+      </p>
+    </section>
+
+    <section class="card">
+      <h2>ส่วนใดบ้างที่นักศึกษาปรับแก้ไขเอง</h2>
+      <p>
+        ปรับเองในส่วน UI การแสดงสถิติ/ข้อความภาษาไทย และปรับค่า threshold ของการตรวจจับการยกแขน
+        ให้เหมาะกับการใช้งาน
+      </p>
+    </section>
+
+    <section class="card">
+      <h2>ภาพตัวอย่างหน้าเว็บ Lab09 ใน GitHub Page</h2>
+      <img src="screenshots/githubpage.jpg" alt="GitHub Page"> 
+      <div class="placeholder" style="aspect-ratio: 16 / 9;">
+        วางภาพหน้าจอ GitHub Page ของหน้า Lab09
+      </div>
+      <img src="" alt="">
+    </section>
+
+    <div class="footer">
+      Mobile Web Application Development - Lab09 (Ionic + Mobile Phone Sensors)
+    </div>
+  </div>
+</body>
+</html>
