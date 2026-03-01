@@ -21,4 +21,12 @@ export default defineConfig({
     globals: true,
     environment: "jsdom",
   },
+  server: {
+    host: true, 
+    port: 5173,
+    allowedHosts: [
+      '.ngrok-free.app', // เพิ่มบรรทัดนี้เพื่อให้ยอมรับทุกลิงก์จาก ngrok
+      '.ngrok-free.dev'
+    ]
+  }
 });
