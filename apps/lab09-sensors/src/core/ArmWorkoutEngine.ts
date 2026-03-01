@@ -92,7 +92,6 @@ export class ArmWorkoutEngine {
     const y = sample.ay;
     const side = Math.abs(sample.ax) + Math.abs(sample.az);
 
-    // ค่าพื้นฐาน ต้องปรับบนมือถือจริงภายหลัง
     const UP_TH = 2.0;
     const DOWN_TH = -1.5;
     const MIN_ROM = 3.0;
@@ -100,7 +99,6 @@ export class ArmWorkoutEngine {
     const MAX_MS = 3500;
     const MAX_SIDE = 5.0;
 
-    // เก็บ peak/valley ต่อเนื่อง
     this.peak = Math.max(this.peak, y);
     this.valley = Math.min(this.valley, y);
 
