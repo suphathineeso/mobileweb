@@ -1,1 +1,0 @@
-import{W as e}from"./Tab1Page-DJEOmHDd.js";import"./index-C7q3mDg_.js";import"./_plugin-vue_export-helper-DlAUqK2U.js";class n extends e{constructor(){super(),this.registerWindowListener("devicemotion","accel"),this.registerWindowListener("deviceorientation","orientation")}}export{n as MotionWeb};
